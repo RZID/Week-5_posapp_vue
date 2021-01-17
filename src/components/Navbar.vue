@@ -22,7 +22,10 @@
               <h4>Food Items</h4>
             </div>
             <div class="col-2 align-self-center">
-              <b-link class="text-dark text-right" @click="toggleSearch()">
+              <b-link
+                class="text-dark text-right"
+                @click="$parent.toggleSearch()"
+              >
                 <div v-if="this.$parent.search">
                   <h4><i class="fa fa-times"></i></h4>
                 </div>
@@ -50,7 +53,7 @@
           class="col h-100 d-flex justify-content-center"
         >
           <div class="align-self-center">
-            <h4>Detail Of</h4>
+            <h4 class="m-0">Detail Of ({{ this.$parent.productName }})</h4>
           </div>
         </div>
       </div>

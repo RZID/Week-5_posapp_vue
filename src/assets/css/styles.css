@@ -12,6 +12,15 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+.bg-card-red{
+    background: linear-gradient(278.29deg, #FBB2B4 30.05%, rgba(255, 143, 178, 0) 133.19%);
+}
+.bg-card-blue{
+    background: linear-gradient(278.29deg, #29DFFF 30.05%, rgba(41, 223, 255, 0) 133.19%);
+}
+.bg-card-purple{
+    background: linear-gradient(278.29deg, #AB84C8 30.05%, rgba(241, 201, 236, 0) 133.19%);
+}
 /* Hide Number Arrows */
 input[type=number] {
   -moz-appearance: textfield;
@@ -49,9 +58,11 @@ body,html{
 .nBar{
     height: 60px;
 }
-
 .h-content{
     height: calc(100vh - 60px);
+}
+.h-content-force{
+    height: calc(100vh - 60px)!important;
 }
 .image-content{
     min-height: 15vw;
@@ -80,6 +91,11 @@ body,html{
 .page-item .page-link{
     color: #17a2b8;
 }
+.card-img-detail{
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+}
 .custom-control-input:checked ~ .custom-control-label::before {
     color: #fff;
     border-color: #17a2b8 !important;
@@ -99,7 +115,6 @@ select.form-control {
   box-shadow: none;
   border-radius: 0;
 }
-
 input[type="text"]:focus,
 input[type="number"]:focus,
 select.form-control:focus {

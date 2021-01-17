@@ -21,14 +21,7 @@
           <h5>Image</h5>
         </div>
         <div class="col">
-          <div class="input-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text">
-                <i class="fa fa-image"></i>
-              </span>
-            </div>
-            <input type="text" class="form-control" v-model="dataForm.image" />
-          </div>
+          <input type="text" class="form-control" v-model="dataForm.image" />
         </div>
       </div>
       <div class="row pt-3">
@@ -36,17 +29,12 @@
           <h5>Price</h5>
         </div>
         <div class="col">
-          <div class="input-group">
-            <div class="input-group-prepend">
-              <span class="input-group-text"> Rp. </span>
-            </div>
-            <input
-              type="number"
-              class="form-control"
-              min="0"
-              v-model="dataForm.price"
-            />
-          </div>
+          <input
+            type="number"
+            class="form-control"
+            min="0"
+            v-model="dataForm.price"
+          />
         </div>
       </div>
       <div class="row pt-3">
@@ -54,10 +42,7 @@
           <h5>Category</h5>
         </div>
         <div class="col">
-          <select
-            class="form-control custom-select"
-            v-model="dataForm.category"
-          >
+          <select class="form-control" v-model="dataForm.category">
             <option selected disabled value="">Choose One...</option>
             <option
               v-for="(element, i) in dataCategory"

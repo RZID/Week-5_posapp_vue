@@ -110,6 +110,10 @@ export default {
       this.$bvModal.hide('cart')
       return then
     },
+    // Toggling modal cart then run script on parameter
+    toggleSearch () {
+      this.search = !this.search
+    },
     // Toggle number to rupiah
     toRupiah (number) {
       return number.toLocaleString('id', { style: 'currency', currency: 'IDR' }).replace(',00', ',-').replace('Rp', 'Rp.')

@@ -3,7 +3,21 @@
     <contentControl />
     <div class="container">
       <div v-if="statement.filtered">
-        {{ statement.searchStatement }} {{ statement.filterStatement }}
+        {{
+          statement.searchStatement
+            ? "Searching '" + statement.searchStatement + "'"
+            : ""
+        }}
+        <span v-if="statement.searchStatement && statement.filterStatement">
+          and
+        </span>
+        <span class="text-capitalize">
+          {{
+            statement.filterStatement
+              ? "Sorting by " + statement.filterStatement
+              : ""
+          }}
+        </span>
       </div>
     </div>
     <div v-if="statement.isLoading">
@@ -71,7 +85,7 @@
               >
                 <div class="align-self-center">
                   Showing {{ dataHandler.totalInPageData }} Of
-                  {{ dataHandler.totalDataFiltered }}
+                  {{ dataHandler.totalDataFiltered }} Data
                   <span
                     v-if="
                       dataHandler.totalData !== dataHandler.totalDataFiltered
@@ -117,17 +131,15 @@
         </div>
       </div>
     </div>
-    <addItem />
   </div>
 </template>
 <script>
 import contentControl from '../components/ContentCtrl'
 import Axios from 'axios'
-import addItem from '../components/modals/AddItems'
 import Swal from 'sweetalert2'
 export default {
   components: {
-    contentControl, addItem
+    contentControl
   },
   data () {
     return {

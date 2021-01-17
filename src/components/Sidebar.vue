@@ -1,10 +1,14 @@
 <template>
   <div>
     <div class="py-3 text-center">
-      <h3><i class="fa fa-utensils"></i></h3>
+      <router-link to="/" class="text-dark">
+        <h3><i class="fa fa-utensils"></i></h3>
+      </router-link>
     </div>
     <div class="pb-3 text-center">
-      <h3><i class="fa fa-chart-line"></i></h3>
+      <router-link to="/history" class="text-dark">
+        <h3><i class="fa fa-chart-line"></i></h3>
+      </router-link>
     </div>
     <div v-if="currentRoute && currentRoute === 'Home'">
       <div class="pb-3 text-center d-md-none">
@@ -23,10 +27,15 @@
         <h3 class="text-success text-center"><i class="fa fa-plus"></i></h3>
       </b-link>
     </div>
+    <addItem />
   </div>
 </template>
 <script>
+import addItem from '../components/modals/AddItems'
 export default {
+  components: {
+    addItem
+  },
   data () {
     return {
       currentRoute: ''

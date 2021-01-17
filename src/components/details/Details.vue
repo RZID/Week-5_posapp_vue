@@ -3,13 +3,11 @@
     <div class="container py-3">
       <div class="card">
         <div class="row no-gutters">
-          <div class="col-md-4">
-            <img
-              :src="currentData.image"
-              class="card-img"
-              :alt="'Image Of ' + currentData.name"
-            />
-          </div>
+          <div
+            class="col-md-4 card-img-detail"
+            :style="'background:url(' + currentData.image + ')'"
+            :alt="'Image Of ' + currentData.name"
+          ></div>
           <div class="col-md-8 d-flex">
             <div class="align-self-center card-body">
               <div class="p-3">
@@ -91,7 +89,11 @@
               </div>
               <div class="row">
                 <div class="col">
-                  <button type="button" class="btn btn-danger btn-block">
+                  <button
+                    type="button"
+                    class="btn btn-danger btn-block"
+                    @click="deleteThis()"
+                  >
                     Delete this item
                   </button>
                 </div>
@@ -136,7 +138,23 @@ export default {
         confirmButtonText: 'Sure'
       }).then((result) => {
         if (result.isConfirmed) {
-          Axios.delete('http://localhost:3000/')
+          Axios.delete('http://localhost:3000/product/' + this.pageId).then(() => {
+            this.$router.push('/')
+            Swal.fire({
+              animation: true,
+              title: 'You\'ve been delete a product',
+              toast: true,
+              icon: 'success',
+              position: 'top-end',
+              showConfirmButton: false,
+              timer: 3000,
+              timerProgressBar: true,
+              didOpen: (toast) => {
+                toast.addEventListener('mouseenter', Swal.stopTimer)
+                toast.addEventListener('mouseleave', Swal.resumeTimer)
+              }
+            })
+          })
         }
       })
     },
@@ -180,7 +198,7 @@ export default {
               this.$router.push('/')
               Swal.fire({
                 animation: true,
-                title: `You've been update a product`,
+                title: 'You\'ve been update a product',
                 toast: true,
                 icon: 'success',
                 position: 'top-end',
@@ -202,6 +220,7 @@ export default {
     this.pageId = this.$route.params.id
     Axios.get('http://localhost:3000/productDetail/' + this.$route.params.id).then((res) => {
       this.currentData = res.data[0]
+      this.$parent.productName = res.data[0].name
     }).catch(err => console.error(err))
     Axios.get('http://localhost:3000/category').then(res => { this.dataCategory = (res.data) })
   }

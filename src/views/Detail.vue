@@ -20,6 +20,11 @@ import detail from '../components/details/Details'
 export default {
   components: {
     navbar, sidebar, detail
+  },
+  data () {
+    return {
+      productName: ''
+    }
   }
 }
 </script>
