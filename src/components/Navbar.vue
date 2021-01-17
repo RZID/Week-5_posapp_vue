@@ -56,6 +56,14 @@
             <h4 class="m-0">Detail Of ({{ this.$parent.productName }})</h4>
           </div>
         </div>
+        <div
+          v-if="currentRoute === 'History'"
+          class="col h-100 d-flex justify-content-center"
+        >
+          <div class="align-self-center">
+            <h4 class="m-0">History</h4>
+          </div>
+        </div>
       </div>
     </div>
   </div>

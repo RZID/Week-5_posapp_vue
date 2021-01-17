@@ -82,7 +82,11 @@
             </div>
           </div>
           <p>*Belum termasuk Ppn</p>
-          <button type="button" class="btn btn-sm btn-info btn-block">
+          <button
+            type="button"
+            class="btn btn-sm btn-info btn-block"
+            @click="parent.toggleModal(parent.checkOut())"
+          >
             Checkout!
           </button>
           <button
