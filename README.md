@@ -1,24 +1,14 @@
-# posapp
+# POS APP With VUE JS
+## What is it?
+This is a project (Point Of Sale) for restaurant. It was build by VUE, Bootstrap and etc.
 
-## Project setup
-```
-npm install
-```
+---
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## How to use?
+1. Run `npm install` to install all required modules
+2. - Run `npm serve` to compile for development use 
+    - Run `npm run build` to serve production use
 
-### Compiles and minifies for production
-```
-npm run build
-```
+3. Don't forget to serve microservice and run mysql server for backend
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+---
