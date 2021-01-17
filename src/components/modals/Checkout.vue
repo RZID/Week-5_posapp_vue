@@ -66,8 +66,8 @@
         </div>
       </div>
       <div class="text-center">
-        <b-link class="text-muted" @click="$bvModal.hide('checkOut')"
-          >Go back, i want to change</b-link
+        <b-link class="text-muted" @click="$bvModal.hide('checkOut')">
+          Go back, i want to change</b-link
         >
       </div>
     </b-modal>

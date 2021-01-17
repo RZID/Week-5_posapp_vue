@@ -43,7 +43,7 @@
                       type="button"
                       @click="parent.decrement(element.id)"
                     >
-                      <i class="fa fa-minus"></i>
+                      <i class="fa fa-minus"> </i>
                     </button>
                   </div>
                   <input

@@ -45,7 +45,8 @@
             <span
               class="badge badge-info m-0 p-1"
               v-text="this.$parent.cart.length ? this.$parent.cart.length : ''"
-            ></span>
+            >
+            </span>
           </h4>
         </div>
         <div

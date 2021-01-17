@@ -11,4 +11,5 @@ This is a project (Point Of Sale) for restaurant. It was build by VUE, Bootstrap
 
 3. Don't forget to serve microservice and run mysql server for backend
 
+
 ---
